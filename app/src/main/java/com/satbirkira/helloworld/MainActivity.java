@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -11,7 +14,18 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main); //use activity_main.xml
+
+        //set to final to use in listener
+        final TextView first_textview =  (TextView) findViewById(R.id.the_hello_word_text);
+        Button firstButton = (Button) findViewById(R.id.the_bird_button);
+        firstButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                first_textview.setText("You clicked.");
+            }
+        });
+
     }
 
 

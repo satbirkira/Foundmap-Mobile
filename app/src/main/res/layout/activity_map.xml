@@ -1,6 +1,35 @@
-<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Map" />
+    android:orientation="vertical"
+    tools:context=".Map"
+    >
+
+    <ImageView android:id="@+id/foundmap_logo"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:visibility="visible"
+        android:src="@drawable/foundmap"
+        android:layout_centerVertical="true"
+        />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:id="@+id/loading_picture"
+        android:layout_below="@+id/foundmap_logo"
+        android:src="@drawable/loading"
+        android:layout_centerHorizontal="true" />
+
+
+    <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/theMap"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        />
+
+</RelativeLayout >
